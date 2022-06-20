@@ -9,6 +9,8 @@ import com.ufes.delivery.model.Desconto;
 import com.ufes.delivery.model.Imposto;
 import com.ufes.delivery.model.ItemDePedido;
 import com.ufes.delivery.model.Pedido;
+import com.ufes.delivery.state.ConcluidoState;
+import com.ufes.delivery.state.State;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -34,6 +36,7 @@ public class Director {
 
     public void constructCesta(Builder builder, String cestaTipo, int codigo, LocalDateTime data, Cliente cliente, ArrayList<Imposto> impostos, ArrayList<Desconto> descontos) {
         Pedido pedido = new Pedido(codigo, data, cliente);
+        State state = new ConcluidoState();
 
         pedido.setDescontos(descontos);
         pedido.setImpostos(impostos);
@@ -44,7 +47,7 @@ public class Director {
         pedido.calculaImpostos();
         pedido.calculaValorFinalApagar();
 
-        builder.setCesta(cestaTipo, pedido);
+        builder.setCesta(cestaTipo, pedido, state);
     }
 
 }

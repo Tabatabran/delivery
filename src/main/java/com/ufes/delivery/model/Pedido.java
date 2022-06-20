@@ -95,6 +95,8 @@ public class Pedido {
         this.descontos = descontos;
     }
     
+    
+    
     public void calculaValorTotal() {
         
         for (ItemDePedido item: itens){

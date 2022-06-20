@@ -5,6 +5,7 @@
 package com.ufes.delivery.builder;
 
 import com.ufes.delivery.model.Pedido;
+import com.ufes.delivery.state.State;
 
 /**
  *
@@ -19,7 +20,7 @@ public class CestaBuilder implements Builder {
     }
 
     @Override
-    public void setCesta(String tipoCesta, Pedido pedido) {
+    public void setCesta(String tipoCesta, Pedido pedido, State state) {
         if (tipoCesta != "Cesta Basica" && tipoCesta != "Cesta Ultra") {
             
         } else {
@@ -31,6 +32,7 @@ public class CestaBuilder implements Builder {
         }
 
         cesta.setPedido(pedido);
+        cesta.setState(state);
     }
 
 }

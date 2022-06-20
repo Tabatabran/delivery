@@ -8,6 +8,6 @@ package com.ufes.delivery.state;
  *
  * @author Tábata Brandão
  */
-public class PedidoConcluido {
+public class ProntoParaEntregaState {
     
 }

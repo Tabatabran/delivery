@@ -8,11 +8,11 @@ package com.ufes.delivery.state;
  *
  * @author Tábata Brandão
  */
-public interface State {
+public abstract class State {
     public abstract String concluir();
     public abstract String cancelar();
     public abstract String pagar();
-    public abstract String prepararCasta();
+    public abstract String prepararCesta();
     public abstract String sairParaEntrega();
     public abstract String entregar();
     public abstract String avaliarAtendimento();

@@ -5,6 +5,7 @@
 package com.ufes.delivery.builder;
 
 import com.ufes.delivery.model.Pedido;
+import com.ufes.delivery.state.State;
 
 /**
  *
@@ -13,10 +14,12 @@ import com.ufes.delivery.model.Pedido;
 public class Cesta {
     private CestaTipo cestaTipo;
     private Pedido pedido;
+    private State state;
 
-    public Cesta(CestaTipo cestaTipo, Pedido pedido) {
+    public Cesta(CestaTipo cestaTipo, Pedido pedido, State state) {
         this.cestaTipo = cestaTipo;
         this.pedido = pedido;
+        this.state = state;
     }
 
     public CestaTipo getCestaTipo() {
@@ -33,6 +36,16 @@ public class Cesta {
 
     public void setPedido(Pedido pedido) {
         this.pedido = pedido;
-    }    
+    }   
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+    
+    
     
 }
