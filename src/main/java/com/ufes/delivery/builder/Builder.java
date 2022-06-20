@@ -2,20 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.ufes.delivery.model;
+package com.ufes.delivery.builder;
+
+import com.ufes.delivery.model.Pedido;
 
 /**
  *
  * @author Tábata Brandão
  */
-public class Cliente {
-    public String nome;
+public interface Builder {
 
-    public Cliente(String nome) {
-        this.nome = nome;
-    }
+    void setCesta(String tipoCesta, Pedido pedido);
 
-    public String getNome() {
-        return nome;
-    }
 }

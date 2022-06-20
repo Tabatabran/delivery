@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class ProdutoDAO {
 
-    private ArrayList<Produto> produtos;
+    private final ArrayList<Produto> produtos;
     private static ProdutoDAO instance;
 
     private ProdutoDAO() {
